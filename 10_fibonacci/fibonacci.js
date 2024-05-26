@@ -4,10 +4,14 @@ const fibonacci = function(a) {
     let countFirst = 0;
     let countSecond = 1;
     let result = 0;
-    for(let i = 0; i < a; i++){
+    for(let i = 1; i < a; i++){
+        let curr = countFirst + countSecond;
         result = result + countSecond;
-        countSecond = result;
+        countFirst = countSecond;
+        countSecond = curr;
+
     }
+    return countSecond;
 };
 
 // 0    1	1	2	3	
